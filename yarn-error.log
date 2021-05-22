@@ -1,0 +1,101 @@
+Arguments: 
+  /Users/johnwaidhofer/.nvm/versions/node/v16.0.0/bin/node /Users/johnwaidhofer/.pyenv/versions/3.7.5/lib/python3.7/site-packages/jupyterlab/staging/yarn.js install
+
+PATH: 
+  /Users/johnwaidhofer/.pyenv/versions/3.7.5/bin:/usr/local/Cellar/pyenv/1.2.24.1/libexec:/usr/local/Cellar/pyenv/1.2.24.1/plugins/python-build/bin:/Users/johnwaidhofer/.pyenv/shims:/Users/johnwaidhofer/.yarn/bin:/Users/johnwaidhofer/.config/yarn/global/node_modules/.bin:/Users/johnwaidhofer/.nvm/versions/node/v16.0.0/bin:/usr/local/Cellar/pyenv-virtualenv/1.1.5/shims:/Users/johnwaidhofer/.pyenv/shims:/usr/local/bin:/Users/johnwaidhofer/.pyenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Applications/Racket/bin/racket:/Applications/Racket/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/Caskroom/miniconda/base/envs/j-renderers/bin:/usr/local/Caskroom/miniconda/base/condabin:/Users/johnwaidhofer/.pyenv/shims:/Users/johnwaidhofer/.yarn/bin:/Users/johnwaidhofer/.config/yarn/global/node_modules/.bin:/Users/johnwaidhofer/.nvm/versions/node/v16.0.0/bin:/usr/local/Cellar/pyenv-virtualenv/1.1.5/shims:/Users/johnwaidhofer/.pyenv/bin:/Users/johnwaidhofer/.cargo/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  16.0.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/johnwaidhofer/Desktop/Coding/Jupyter/labiconviewer/package.json: Unexpected token  in JSON at position 240
+      at JSON.parse (<anonymous>)
+      at /Users/johnwaidhofer/.pyenv/versions/3.7.5/lib/python3.7/site-packages/jupyterlab/staging/yarn.js:1098:57
+      at Generator.next (<anonymous>)
+      at step (/Users/johnwaidhofer/.pyenv/versions/3.7.5/lib/python3.7/site-packages/jupyterlab/staging/yarn.js:310:30)
+      at /Users/johnwaidhofer/.pyenv/versions/3.7.5/lib/python3.7/site-packages/jupyterlab/staging/yarn.js:321:13
+
+npm manifest: 
+  {
+    "name": "labiconviewer",
+    "version": "0.1.0",
+    "description": "Browse Jupyter Lab icons",
+    "keywords": [
+      "jupyter",
+      "jupyterlab",
+      "jupyterlab-extension"
+    ],
+    "homepage": "https://github.com/github_username/labiconviewer[D[D[D[A[A[B[B[B",
+    "bugs": {
+      "url": "https://github.com/github_username/labiconviewer[D[D[D[A[A[B[B[B/issues"
+    },
+    "license": "BSD-3-Clause",
+    "author": {
+      "name": "John Waidhofer",
+      "email": "waidhoferj@gmail.com"
+    },
+    "files": [
+      "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+      "style/**/*.{css,.js,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+    ],
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "style": "style/index.css",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/github_username/labiconviewer[D[D[D[A[A[B[B[B.git"
+    },
+    "scripts": {
+      "build": "jlpm run build:lib && jlpm run build:labextension:dev",
+      "build:prod": "jlpm run clean && jlpm run build:lib && jlpm run build:labextension",
+      "build:labextension": "jupyter labextension build .",
+      "build:labextension:dev": "jupyter labextension build --development True .",
+      "build:lib": "tsc",
+      "clean": "jlpm run clean:lib",
+      "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
+      "clean:labextension": "rimraf labiconviewer/labextension",
+      "clean:all": "jlpm run clean:lib && jlpm run clean:labextension",
+      "eslint": "eslint . --ext .ts,.tsx --fix",
+      "eslint:check": "eslint . --ext .ts,.tsx",
+      "install:extension": "jlpm run build",
+      "watch": "run-p watch:src watch:labextension",
+      "watch:src": "tsc -w",
+      "watch:labextension": "jupyter labextension watch ."
+    },
+    "dependencies": {
+      "@jupyterlab/application": "^3.0.0"
+    },
+    "devDependencies": {
+      "@jupyterlab/builder": "^3.0.0",
+      "@typescript-eslint/eslint-plugin": "^4.8.1",
+      "@typescript-eslint/parser": "^4.8.1",
+      "eslint": "^7.14.0",
+      "eslint-config-prettier": "^6.15.0",
+      "eslint-plugin-prettier": "^3.1.4", 
+      "npm-run-all": "^4.1.5",
+      "prettier": "^2.1.1",
+      "rimraf": "^3.0.2",
+      "typescript": "~4.1.3"
+    },
+    "sideEffects": [
+      "style/*.css",
+      "style/index.js"
+    ],
+    "styleModule": "style/index.js",
+    "jupyterlab": { 
+      "extension": true,
+      "outputDir": "labiconviewer/labextension"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
