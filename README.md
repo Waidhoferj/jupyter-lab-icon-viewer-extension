@@ -1,14 +1,12 @@
-# labiconviewer
+# Jupyter Lab Icon Viewer
 
 ![Github Actions Status](https://github.com/github_username/labiconviewer[D[D[D[A[A[B[B[B/workflows/Build/badge.svg)
 
-Browse Jupyter Lab icons
-
-
+Browse Jupyter Lab icons during development
 
 ## Requirements
 
-* JupyterLab >= 3.0
+- JupyterLab >= 3.0
 
 ## Install
 
@@ -25,7 +23,6 @@ To remove the extension, execute:
 ```bash
 pip uninstall labiconviewer
 ```
-
 
 ## Contributing
 
