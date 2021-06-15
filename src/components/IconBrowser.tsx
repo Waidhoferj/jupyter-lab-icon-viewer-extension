@@ -12,19 +12,20 @@ const iconBrowserCss = css`
 `;
 
 const iconListCss = css`
-  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   padding: 10px;
   margin: auto;
-  text-align: center;
-  height: 100%;
+  height: calc(100vh - 440px);
   overflow-y: scroll;
   padding-bottom: 50px;
 `;
 
 const iconCardCss = css`
   position: relative;
-  display: inline-block;
+  display: block;
   margin: 15px;
   width: 150px;
   height: 150px;
@@ -47,6 +48,10 @@ const iconCardCss = css`
     width: 100%;
     height: 100%;
   }
+
+  .icon-label {
+    margin-top: 15px;
+  }
 `;
 
 const searchBarCss = css`
@@ -59,6 +64,8 @@ const searchBarCss = css`
     padding: 15px 20px;
     border: var(--jp-border-width) solid var(--jp-border-color0);
     border-radius: var(--jp-border-radius);
+    color: inherit;
+    background: var(--jp-layout-color1);
   }
 `;
 
@@ -85,18 +92,17 @@ export default function IconBrowser() {
   return (
     <section className="IconBrowser" css={iconBrowserCss}>
       <SearchBar onChange={query => setQuery(query)} />
-      <div style={{ height: '100%' }}>
-        <ul className="icon-results" css={iconListCss}>
-          {searchResults.map(({ friendlyName, icon }) => (
-            <li css={iconCardCss} key={friendlyName}>
-              <div className="card-content">
-                <icon.react width="35px" height="auto" display="block" />
-                <p>{friendlyName}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+
+      <ul className="icon-results" css={iconListCss}>
+        {searchResults.map(({ friendlyName, icon }) => (
+          <li css={iconCardCss} key={friendlyName}>
+            <div className="card-content">
+              <icon.react width="35px" height="auto" display="block" />
+              <p className="icon-label">{friendlyName}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
